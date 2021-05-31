@@ -6,12 +6,12 @@ requirements:
 
 
 can be installed with 
-'''sh
+```sh
 pip install kivy
-'''
+```
 
 for start use
 
-'''sh
+```sh
 python3 main.py
-'''
+```
