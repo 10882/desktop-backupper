@@ -1,7 +1,15 @@
-This program allows you to back up your desktop. It provides a user-friendly graphical interface to select the disk and compression. To run start main.py with python 3
+This program allows you to back up your desktop. It provides a user-friendly graphical interface to select the disk and compression.
 
 
 requirements:
+- kivy
 
-kivy
-can be installed with "pip install kivy"
+
+can be installed with 
+''' sh
+pip install kivy
+'''
+for start use
+''' sh
+python3 main.py
+'''
