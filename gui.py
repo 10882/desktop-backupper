@@ -1,4 +1,8 @@
 import kivy
+import threading
+import pymsgbox
+
+
 from kivy.core import image
 import core
 from kivy.app import App
@@ -58,6 +62,14 @@ def gui_main():
                 pos = (320, 170)
             ))
 
+
+            main.add_widget(Label(
+                font_size = 20,
+                text = '',
+                size_hint = (.1, .06),
+                pos = (420, 550)         
+            ))
+
             main.add_widget(Switch(
                 active = True,
                 pos = (350, 100),
@@ -67,7 +79,19 @@ def gui_main():
 
         def st_copy(self, instance):
             zip = self.root.children[0].active
-            core.backup(instance.text, zip)
+            self.threadcopy = threading.Thread(target = core.backup, args = (instance.text, zip))
+            self.threadcopy.start()
+            
+            check_copy = threading.Thread(target= self.check_copy)
+            check_copy.start()
+            self.root.children[1].text = "Идет копирование, не закрывайте программу."
+
+        def check_copy(self):
+            while self.threadcopy.is_alive() == True:
+                pass
+            self.root.children[1].text = ''
+            pymsgbox.alert(text = 'Копирование завершено. Вы можете закрыть программу.', title= 'Копирование завершено')
+
 
 
     DBApp().run()

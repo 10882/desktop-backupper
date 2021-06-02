@@ -2,8 +2,9 @@ import zipfile
 import os
 import win32api
 
+
 def backup(disk = str, zip = bool):
-    dt = 'C:\\Users\\'+win32api.GetUserName()+'\\Desktop'
+    dt = 'C:\\Users\\'+win32api.GetUserName()+'\\desktop'
     if zip == False:
         os.system('mkdir '+disk+':\\bu')
         print('xcopy /e '+dt+' '+disk+ ':\\bu')
