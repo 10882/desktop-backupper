@@ -8,6 +8,7 @@ requirements:
 can be installed with 
 ```sh
 pip install kivy
+pip install PyMsgBox
 ```
 
 for start use
