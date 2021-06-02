@@ -3,7 +3,7 @@ This program allows you to back up your desktop. It provides a user-friendly gra
 
 requirements:
 - kivy
-
+- PyMsgBox
 
 can be installed with 
 ```sh
