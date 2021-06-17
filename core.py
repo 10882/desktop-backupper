@@ -16,7 +16,7 @@ def backup(disk = str, zip = bool):
                 f1le.write(os.path.join(root, f))
 
 def get_disk():
-    l = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    l = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U' 'V', 'W', 'X', 'Z']
     res = []
     for disk in l:
         if os.system(disk+':') == 0:
